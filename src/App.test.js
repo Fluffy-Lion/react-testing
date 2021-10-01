@@ -1,8 +1,16 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('h1 is present', () => {
-  render(<App />);
-  const headElement = screen.getByRole("heading");
-  expect(headElement).toBeInTheDocument();
+describe("app", () => {
+  test("h1 is present", () => {
+    render(<App />);
+    const headElement = screen.getByRole("heading");
+    expect(headElement).toBeInTheDocument();
+  });
+
+  test("button is present", () => {
+    render(<App />);
+    const buttonElement = screen.getByRole("button");
+    expect(buttonElement).toBeInTheDocument();
+  });
 });
