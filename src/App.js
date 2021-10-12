@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const [count, setCount] = useState(0);
   const [data, setData] = useState("");
   const [colors, setColors] = useState([
     "#ccdbfd",
@@ -38,7 +37,6 @@ const App = () => {
       {data ? <Header text={data.slip.id} /> : null}
       {data ? <AdviceSlip data-testid="advice-cont" slip={data.slip} /> : null}
       <Button handlerHit={handlerHit}>hit me</Button>
-      <h2>{count}</h2>
     </div>
   );
 };
