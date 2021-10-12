@@ -20,7 +20,7 @@ const App = () => {
   const [color, setColor] = useState("#ccdbfd");
 
   const colorSelector = () => {
-    setColor([Math.floor(Math.random() * colors.length)]);
+    setColor(colors[Math.floor(Math.random() * colors.length)]);
   };
   const handlerHit = () => {
     collect();
