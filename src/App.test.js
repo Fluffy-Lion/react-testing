@@ -18,7 +18,6 @@ describe("app", () => {
     const adviceNull = screen.queryByText("advice")
     expect(adviceNull).toBeNull()
     const adviceRender = await screen.findByTestId("advice-slip")
-  
     expect(adviceRender).toBeInTheDocument()
     
   })
