@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const [data, setData] = useState("");
   const [colors, setColors] = useState([
     "#ccdbfd",
@@ -17,15 +17,10 @@ const App = () => {
     "#a0ced9",
     "#adf7b6",
   ]);
-  const [color, setColor] = useState(colors[count]);
+  const [color, setColor] = useState("#ccdbfd");
 
   const colorSelector = () => {
-    if(count === colors.length){
-      setCount(0)
-    }else{
-      setCount(count + 1)
-      setColor(colors[count])  
-    }
+    setColor([Math.floor(Math.random() * colors.length)]);
   };
   const handlerHit = () => {
     collect();
@@ -41,9 +36,9 @@ const App = () => {
   return (
     <div style={{ backgroundColor: `${color}` }} id="appCont">
       <Header text="text" />
-      <AdviceSlip />
+      {data ? <AdviceSlip data-testid="advice-cont" slip={data.slip} /> : null}
       <Button handlerHit={handlerHit}>hit me</Button>
-    <h1>{count}</h1>
+      <h2>{count}</h2>
     </div>
   );
 };

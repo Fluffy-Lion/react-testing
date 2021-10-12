@@ -1,4 +1,4 @@
-import { render, screen, fireEvent} from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Button from "../Button";
 
 describe("button", () => {
@@ -8,10 +8,10 @@ describe("button", () => {
     expect(buttonElement).toBeInTheDocument();
   });
   test("button fires function", () => {
-      const mockFunc = jest.fn()
-      render(<Button collect={mockFunc}/>)
-      const buttonElement = screen.getByRole("button");
-      fireEvent.click(buttonElement)
-      expect(mockFunc).toHaveBeenCalledTimes(1)
-  })
+    const mockFunc = jest.fn();
+    render(<Button handlerHit={mockFunc} />);
+    const buttonElement = screen.getByRole("button");
+    fireEvent.click(buttonElement);
+    expect(mockFunc).toHaveBeenCalledTimes(1);
+  });
 });
