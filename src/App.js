@@ -35,7 +35,7 @@ const App = () => {
   }, []);
   return (
     <div style={{ backgroundColor: `${color}` }} id="appCont">
-      <Header text="text" />
+      {data ? <Header text={data.slip.id} /> : null}
       {data ? <AdviceSlip data-testid="advice-cont" slip={data.slip} /> : null}
       <Button handlerHit={handlerHit}>hit me</Button>
       <h2>{count}</h2>
