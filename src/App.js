@@ -4,39 +4,31 @@ import Button from "./components/Button/Button";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
+import React from "react";
+import { motion } from 'framer-motion'
 
 const App = () => {
   const [data, setData] = useState("");
-  const [colors, setColors] = useState([
-    "#ccdbfd",
-    "#e2e2e2 ",
-    "#ffc09f",
-    "#ffee93",
-    "#fcf5c7",
-    "#a0ced9",
-    "#adf7b6",
-  ]);
-  const [color, setColor] = useState("#ccdbfd");
 
-  const colorSelector = () => {
-    setColor(colors[Math.floor(Math.random() * colors.length)]);
-  };
-  const handlerHit = () => {
-    collect();
-    colorSelector();
-  };
+
   const collect = async () => {
     let response = await axios.get("https://api.adviceslip.com/advice");
     setData(response.data);
   };
   useEffect(() => {
-    handlerHit();
+    collect();
   }, []);
   return (
-    <div style={{ backgroundColor: `${color}` }} id="appCont">
+    <div>
+      <motion.h2 
+        animate={{ fontSize: "100px", color: "#ff2944", x: 180, y: 100 }}
+      >sight</motion.h2>
+    <div id="appCont">
+      
       {data ? <Header text={data.slip.id} /> : null}
       {data ? <AdviceSlip data-testid="advice-cont" slip={data.slip} /> : null}
-      <Button handlerHit={handlerHit}>hit me</Button>
+      <Button handlerHit={collect}>hit me</Button>
+    </div>
     </div>
   );
 };
