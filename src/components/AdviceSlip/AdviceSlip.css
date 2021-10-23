@@ -1,15 +1,16 @@
 p {
     margin: 10px;
+    padding: 6px;
 }
 @media screen and (min-width: 500px){
     p {
-        border: solid red 2px;
+        /* border: solid red 2px; */
         font-size: 40px;
     }
 }
 @media screen and (min-width: 100px) and (max-width: 500px){
     p {
-        border: gold solid 3px;
+        /* border: gold solid 3px; */
         font-size: 15px;
     }
 }

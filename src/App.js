@@ -18,7 +18,7 @@ const App = () => {
     collect();
   }, []);
   return (
-    <div id="appCont">
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} id="appCont">
       {/* <motion.h2
         animate={{ fontSize: "100px", color: "#ff2944", x: 180, y: 100 }}
       >
@@ -33,7 +33,7 @@ const App = () => {
         )}
         <Button handlerHit={collect}>hit me</Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default App;
