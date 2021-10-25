@@ -1,14 +1,16 @@
-
-import './Button.css'
-import { motion } from 'framer-motion';
+import "./Button.css";
+import { motion } from "framer-motion";
 const Button = ({ handlerHit }) => {
-  return ( 
+  return (
     <motion.button
-      initial={{ x: '-100vw'}}
-      animate={{ x: 0 }} 
-      id="mainButton" onClick={handlerHit}>hit me
+      initial={{ x: "-100vw" }}
+      animate={{ x: 0 }}
+      transition={{ delay: 0.5, type: 'spring', stiffness: 160 }}
+      id="mainButton"
+      onClick={handlerHit}
+    >
+      hit me
     </motion.button>
-  
   );
 };
 export default Button;
