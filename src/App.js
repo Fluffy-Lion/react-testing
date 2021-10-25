@@ -32,11 +32,13 @@ const App = () => {
       <div id="card">
         {data && (
           <>
+          <div id="headCont">
             <Header text={data.slip.id} />
+          </div>
             <AdviceSlip data-testid="advice-cont" slip={data.slip} />
           </>
         )}
-        <Button handlerHit={collect}>hit me</Button>
+        <Button handlerHit={collect} />
       </div>
     </motion.div>
   );
