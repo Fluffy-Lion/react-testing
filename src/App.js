@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const App = () => {
   const [data, setData] = useState("");
-
+  const [loading, setLoading] = useState(false)
   const collect = async () => {
     let response = await axios.get("https://api.adviceslip.com/advice");
     setData(response.data);
@@ -24,11 +24,6 @@ const App = () => {
       transition={{ delay: 0.5, duration: 1.5 }}
       id="appCont"
     >
-      {/* <motion.h2
-        animate={{ fontSize: "100px", color: "#ff2944", x: 180, y: 100 }}
-      >
-        sight
-      </motion.h2> */}
       <div id="card">
         {data && (
           <>
